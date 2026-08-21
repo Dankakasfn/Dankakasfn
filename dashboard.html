@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard - DankakaData</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    >
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================
+     HEADER
+========================== -->
+
+<header class="dashboard-header">
+
+    <div class="header-left">
+
+        <!-- Menu -->
+        <button
+            id="menuBtn"
+            class="menu-btn"
+            type="button"
+        >
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+
+        <!-- Logo -->
+        <div class="dashboard-logo">
+
+            <img
+                src="logo.png"
+                alt="DankakaData Logo"
+            >
+
+            <span>DankakaData</span>
+
+        </div>
+
+    </div>
+
+
+    <div class="header-right">
+
+               <a
+    href="https://wa.me/234XXXXXXXXXX"
+    class="whatsapp-header"
+    target="_blank"
+    aria-label="Contact us on WhatsApp"
+>
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+        <!-- Notification -->
+        <button
+            class="header-icon"
+            type="button"
+        >
+
+            <i class="fa-regular fa-bell"></i>
+
+            <span class="notification-dot"></span>
+
+        </button>
+
+
+        <!-- Profile -->
+        <button
+            id="profileBtn"
+            class="profile-btn"
+            type="button"
+        >
+
+            <span id="profileInitial">
+                U
+            </span>
+
+        </button>
+
+ 
+
+    </div>
+
+</header>
+
+
+
+<!-- ==========================
+     SIDEBAR OVERLAY
+========================== -->
+
+<div
+    id="sidebarOverlay"
+    class="sidebar-overlay">
+</div>
+
+
+
+<!-- ==========================
+     SIDEBAR
+========================== -->
+
+<aside
+    id="sidebar"
+    class="sidebar"
+>
+
+
+    <!-- Sidebar Header -->
+
+    <div class="sidebar-header">
+
+        <div class="sidebar-brand">
+
+            <img
+                src="logo.png"
+                alt="DankakaData"
+            >
+
+            <div>
+
+                <strong>
+                    DankakaData
+                </strong>
+
+                <small>
+                    Digital Services
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- Close Sidebar -->
+
+        <button
+            id="closeSidebar"
+            class="close-sidebar"
+            type="button"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+
+
+    <!-- ==========================
+         GENERAL
+    ========================== -->
+
+    <div class="sidebar-section">
+
+        <p class="section-title">
+            GENERAL
+        </p>
+
+
+        <!-- Dashboard -->
+
+        <a
+            href="dashboard.html"
+            class="sidebar-item active"
+        >
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+        <!-- Buy Data -->
+
+        <a
+            href="buy-data.html"
+            class="sidebar-item"
+        >
+
+            <i class="fa-solid fa-wifi"></i>
+
+            <span>
+                Buy Data
+            </span>
+
+        </a>
+
+
+        <!-- Buy Airtime -->
+
+        <a
+            href="#"
+            class="sidebar-item"
+        >
+
+            <i class="fa-solid fa-phone"></i>
+
+            <span>
+                Buy Airtime
+            </span>
+
+        </a>
+
+
+        <!-- Cable TV -->
+
+        <a
+            href="#"
+            class="sidebar-item"
+        >
+
+            <i class="fa-solid fa-tv"></i>
+
+            <span>
+                Cable TV
+            </span>
+
+        </a>
+
+
+        <!-- Electricity -->
+
+        <a
+            href="#"
+            class="sidebar-item"
+        >
+
+            <i class="fa-solid fa-bolt"></i>
+
+            <span>
+                Electricity
+            </span>
+
+        </a>
+
+
+
+        <!-- ==========================
+             WALLET DROPDOWN
+        ========================== -->
+
+        <div class="wallet-dropdown">
+
+
+            <!-- Wallet Button -->
+
+            <button
+                id="walletBtn"
+                class="sidebar-item wallet-btn"
+                type="button"
+            >
+
+                <i class="fa-solid fa-wallet"></i>
+
+                <span>
+                    Wallet
+                </span>
+
+                <i
+                    class="fa-solid fa-chevron-down wallet-arrow"
+                ></i>
+
+            </button>
+
+
+
+            <!-- Wallet Menu -->
+
+            <div
+                id="walletMenu"
+                class="wallet-menu"
+            >
+
+
+                <!-- Automated Bank Transaction -->
+
+                <a
+                    href="#"
+                    class="wallet-item"
+                >
+
+                    <i
+                        class="fa-solid fa-building-columns"
+                    ></i>
+
+                    <span>
+                        Automated Bank Transaction
+                    </span>
+
+                </a>
+
+
+
+                <!-- Dynamic Funding -->
+
+                <a
+                    href="#"
+                    class="wallet-item"
+                >
+
+                    <i
+                        class="fa-solid fa-bolt"
+                    ></i>
+
+                    <span>
+                        Dynamic Funding
+                    </span>
+
+                </a>
+
+
+
+                <!-- Manual Funding -->
+
+                <a
+                    href="#"
+                    class="wallet-item"
+                >
+
+                    <i
+                        class="fa-solid fa-hand-holding-dollar"
+                    ></i>
+
+                    <span>
+                        Manual Funding
+                    </span>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================
+         MANAGEMENT
+    ========================== -->
+
+    <div class="sidebar-section">
+
+        <p class="section-title">
+            MANAGEMENT
+        </p>
+
+
+
+        <!-- ==========================
+             TRANSACTION DROPDOWN
+        ========================== -->
+
+        <div class="sidebar-dropdown">
+
+
+            <button
+                id="transactionBtn"
+                class="sidebar-item dropdown-btn"
+                type="button"
+            >
+
+                <i class="fa-solid fa-receipt"></i>
+
+                <span>
+                    Transactions
+                </span>
+
+                <i
+                    class="fa-solid fa-chevron-down dropdown-arrow"
+                ></i>
+
+            </button>
+
+
+
+            <!-- Transaction Menu -->
+
+            <div
+                id="transactionMenu"
+                class="dropdown-menu"
+            >
+
+                <a href="#">
+                    All Transactions
+                </a>
+
+                <a href="#">
+                    Data
+                </a>
+
+                <a href="#">
+                    Airtime
+                </a>
+
+                <a href="#">
+                    Cable TV
+                </a>
+
+                <a href="#">
+                    Electricity
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================
+         BOTTOM
+    ========================== -->
+
+    <div class="sidebar-bottom">
+
+
+        <!-- Settings -->
+
+        <a
+            href="#"
+            class="sidebar-item"
+        >
+
+            <i class="fa-solid fa-gear"></i>
+
+            <span>
+                Settings
+            </span>
+
+        </a>
+
+
+
+        <!-- Logout -->
+
+        <button
+            id="logoutBtn"
+            class="sidebar-item logout-btn"
+            type="button"
+        >
+
+            <i
+                class="fa-solid fa-right-from-bracket"
+            ></i>
+
+            <span>
+                Logout
+            </span>
+
+        </button>
+
+    </div>
+
+
+</aside>
+
+
+
+<!-- ==========================
+     MAIN DASHBOARD
+========================== -->
+
+<main class="dashboard-main">
+
+
+    <!-- ==========================
+         WELCOME
+    ========================== -->
+
+    <section class="welcome-section">
+
+        <div>
+
+            <p class="welcome-small">
+                Welcome back 👋
+            </p>
+
+            <h1 id="welcomeName">
+                User
+            </h1>
+
+            <p class="welcome-text">
+                Manage your account and digital services.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================
+         BALANCE CARDS
+    ========================== -->
+
+    <section class="balance-grid">
+
+
+        <!-- Wallet Balance -->
+
+        <div class="balance-card wallet-card">
+
+
+            <div class="card-top">
+
+
+                <div class="card-icon">
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                </div>
+
+
+                <!-- Hide / Show Balance -->
+
+                <button
+                    id="toggleBalance"
+                    class="balance-toggle"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-eye"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <p class="card-label">
+                Wallet Balance
+            </p>
+
+
+            <h2
+                id="walletBalance"
+                data-balance="₦0.00"
+            >
+                ₦0.00
+            </h2>
+
+
+
+            <button
+                class="card-action"
+                type="button"
+            >
+
+                <i class="fa-solid fa-plus"></i>
+
+                Fund Wallet
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- Earnings -->
+
+        <div class="balance-card earnings-card">
+
+
+            <div class="card-top">
+
+                <div class="card-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </div>
+
+            </div>
+
+
+
+            <p class="card-label">
+                Total Earnings
+            </p>
+
+
+            <h2>
+                ₦0.00
+            </h2>
+
+
+
+            <button
+                class="card-action"
+                type="button"
+            >
+
+                View Earnings
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ==========================
+         QUICK SERVICES
+    ========================== -->
+
+    <section class="dashboard-section">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <h2>
+                    Quick Services
+                </h2>
+
+                <p>
+                    Choose a service to get started
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="services-grid">
+
+
+            <!-- Data -->
+
+            <a
+                href="buy-data.html"
+                class="service-card"
+            >
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-wifi"></i>
+
+                </div>
+
+                <h3>
+                    Buy Data
+                </h3>
+
+                <p>
+                    Internet data plans
+                </p>
+
+            </a>
+
+
+
+            <!-- Airtime -->
+
+            <a
+                href="airtime.html"
+                class="service-card"
+            >
+
+                <div class="service-icon">
+
+                    <i
+                        class="fa-solid fa-mobile-screen-button"
+                    ></i>
+
+                </div>
+
+                <h3>
+                    Airtime
+                </h3>
+
+                <p>
+                    Recharge your line
+                </p>
+
+            </a>
+
+
+
+            <!-- Cable -->
+
+            <a
+                href="#"
+                class="service-card"
+            >
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-tv"></i>
+
+                </div>
+
+                <h3>
+                    Cable TV
+                </h3>
+
+                <p>
+                    DSTV, GOTV & Startimes
+                </p>
+
+            </a>
+
+
+
+            <!-- Electricity -->
+
+            <a
+                href="#"
+                class="service-card"
+            >
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                </div>
+
+                <h3>
+                    Electricity
+                </h3>
+
+                <p>
+                    Pay electricity bills
+                </p>
+
+            </a>
+
+            <!-- Result Checker -->
+
+<a
+    href="#"
+    class="service-card"
+>
+    <div class="service-icon">
+        <i class="fa-solid fa-file-circle-check"></i>
+    </div>
+
+    <h3>
+        Result Checker
+    </h3>
+
+    <p>
+        Check examination results
+    </p>
+</a>
+
+
+<!-- Smile -->
+
+<a
+    href="#"
+    class="service-card"
+>
+    <div class="service-icon">
+        <i class="fa-solid fa-face-smile"></i>
+    </div>
+
+    <h3>
+        Smile
+    </h3>
+
+    <p>
+        Smile voice
+    </p>
+</a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================
+         RECENT TRANSACTIONS
+    ========================== -->
+
+    <section
+        class="dashboard-section transactions-section"
+    >
+
+
+        <div class="section-heading">
+
+
+            <div>
+
+                <h2>
+                    Recent Transactions
+                </h2>
+
+                <p>
+                    Your latest account activity
+                </p>
+
+            </div>
+
+
+
+            <a
+                href="#"
+                class="view-all"
+            >
+                View All
+            </a>
+
+
+        </div>
+
+
+
+        <div class="transaction-container">
+
+
+            <!-- Empty State -->
+
+            <div
+                id="emptyTransactions"
+                class="empty-transactions"
+            >
+
+                <div class="empty-icon">
+
+                    <i class="fa-solid fa-receipt"></i>
+
+                </div>
+
+
+                <h3>
+                    No transactions yet
+                </h3>
+
+
+                <p>
+                    Your recent transactions will appear here.
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ==========================
+     JAVASCRIPT
+========================== -->
+
+<script src="dashboard.js"></script>
+
+
+</body>
+
+</html>
