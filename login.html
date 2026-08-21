@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login | DankakaData</title>
+
+<link rel="stylesheet" href="login.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="register.html" class="back">
+<i class="fas fa-arrow-left"></i> Back
+</a>
+
+<img src="logo.png" alt="Logo" class="logo">
+
+<h2>Welcome Back</h2>
+
+<p class="subtitle">
+Login to continue
+</p>
+
+<form id="loginForm">
+
+<div class="inputBox">
+
+<input
+type="text"
+id="login"
+required>
+
+<label>Email or Phone Number</label>
+
+<small class="error"></small>
+
+</div>
+
+<div class="inputBox passwordBox">
+
+<input
+type="password"
+id="password"
+required>
+
+<label>Password</label>
+
+<span class="toggle" id="togglePassword">
+
+<i class="fa-solid fa-eye"></i>
+
+</span>
+
+<small class="error"></small>
+
+</div>
+
+<div class="options">
+
+<label>
+
+<input
+type="checkbox"
+id="remember">
+
+Remember Me
+
+</label>
+
+<a href="forgot-password.html">
+Forgot Password?
+</a>
+
+</div>
+
+<button
+type="submit"
+id="loginBtn">
+
+<span class="btn-text">
+
+Login
+
+</span>
+
+<span class="loader"></span>
+
+</button>
+
+<p class="register">
+
+Don't have an account?
+
+<a href="register.html">
+
+Register
+
+</a>
+
+</p>
+
+</form>
+
+</div>
+
+<div
+class="success-box"
+id="successBox">
+
+<svg viewBox="0 0 52 52" class="checkmark">
+
+<circle
+cx="26"
+cy="26"
+r="25"
+fill="none"/>
+
+<path
+fill="none"
+d="M14 27l7 7 16-16"/>
+
+</svg>
+
+<h3>
+
+Login Successful
+
+</h3>
+
+<p>
+
+Redirecting...
+
+</p>
+
+</div>
+
+<script src="login.js"></script>
+
+</body>
+</html>
