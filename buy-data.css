@@ -1,0 +1,1487 @@
+/* =========================================================
+   DANKAKADATA BUY DATA
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f7fa;
+
+    color: #222;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+button,
+input {
+
+    font-family: inherit;
+}
+
+
+button {
+
+    border: none;
+
+    cursor: pointer;
+}
+
+
+a {
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.buy-header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 70px;
+
+    padding: 0 30px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #eeeeee;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    z-index: 1000;
+}
+
+
+.header-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.back-btn {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #fff4e5;
+
+    color: #ff9900;
+
+    font-size: 17px;
+
+    transition: 0.25s ease;
+}
+
+
+.back-btn:hover {
+
+    background: #ff9900;
+
+    color: #ffffff;
+}
+
+
+.header-title h1 {
+
+    font-size: 20px;
+
+    margin-bottom: 3px;
+}
+
+
+.header-title p {
+
+    font-size: 12px;
+
+    color: #888;
+}
+
+
+.header-wallet {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 14px;
+
+    background: #fff4e5;
+
+    border-radius: 20px;
+
+    color: #ff9900;
+
+    font-weight: 700;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.buy-container {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 100px 20px 50px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.buy-card {
+
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.04);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.card-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 25px;
+}
+
+
+.heading-icon {
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #fff4e5;
+
+    color: #ff9900;
+
+    border-radius: 12px;
+
+    font-size: 18px;
+
+    flex-shrink: 0;
+}
+
+
+.card-heading h2 {
+
+    font-size: 18px;
+
+    margin-bottom: 4px;
+}
+
+
+.card-heading p {
+
+    font-size: 13px;
+
+    color: #888;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   NETWORK
+========================================================= */
+
+.network-section {
+
+    margin-bottom: 25px;
+}
+
+
+.network-section > label,
+.input-group > label {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #444;
+}
+
+
+.network-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+
+.network-btn {
+
+    min-height: 80px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    background: #fafafa;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 12px;
+
+    color: #444;
+
+    transition: 0.25s ease;
+}
+
+
+.network-btn img {
+
+    width: 32px;
+    height: 32px;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+
+
+.network-btn span {
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+.network-btn:hover {
+
+    border-color: #ff9900;
+
+    background: #fff8ef;
+
+    transform: translateY(-2px);
+}
+
+
+.network-btn.active {
+
+    border: 2px solid #ff9900;
+
+    background: #fff4e5;
+
+    color: #ff9900;
+
+    box-shadow:
+        0 5px 15px rgba(255,153,0,0.12);
+}
+
+
+/* =========================================================
+   PHONE INPUT
+========================================================= */
+
+.input-group {
+
+    width: 100%;
+}
+
+
+.phone-input {
+
+    width: 100%;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    background: #ffffff;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 11px;
+
+    overflow: hidden;
+
+    transition: 0.25s ease;
+}
+
+
+.phone-input:focus-within {
+
+    border-color: #ff9900;
+
+    box-shadow:
+        0 0 0 3px rgba(255,153,0,0.10);
+}
+
+
+.country-code {
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 13px;
+
+    background: #f8f8f8;
+
+    border-right: 1px solid #eeeeee;
+
+    color: #555;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.phone-input input {
+
+    flex: 1;
+
+    width: 100%;
+
+    height: 100%;
+
+    padding: 0 12px;
+
+    border: none;
+
+    outline: none;
+
+    color: #222;
+
+    font-size: 16px;
+
+    background: transparent;
+}
+
+
+.phone-input input::placeholder {
+
+    color: #aaa;
+}
+
+
+.validator-logo {
+
+    width: 45px;
+    height: 45px;
+
+    margin-right: 5px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background: #f5f5f5;
+
+    color: #aaa;
+
+    flex-shrink: 0;
+}
+
+
+.validator-logo img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+.input-message {
+
+    min-height: 18px;
+
+    margin-top: 7px;
+
+    font-size: 12px;
+}
+
+
+.input-message.error {
+
+    color: #e53935;
+}
+
+
+.input-message.success {
+
+    color: #18a558;
+}
+
+
+/* =========================================================
+   DETECTED NETWORK
+========================================================= */
+
+.detected-network {
+
+    display: none;
+
+    align-items: center;
+
+    gap: 5px;
+
+    margin-top: 5px;
+
+    font-size: 12px;
+
+    color: #777;
+}
+
+
+.detected-network.show {
+
+    display: flex;
+}
+
+
+.detected-network strong {
+
+    color: #ff9900;
+}
+
+
+/* =========================================================
+   PLANS
+========================================================= */
+
+.plans-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+
+.plan-card {
+
+    position: relative;
+
+    min-height: 130px;
+
+    padding: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    background: #fafafa;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.plan-card:hover {
+
+    transform: translateY(-3px);
+
+    border-color: #ff9900;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.06);
+}
+
+
+.plan-card.selected {
+
+    border: 2px solid #ff9900;
+
+    background: #fff8ef;
+
+    box-shadow:
+        0 8px 20px rgba(255,153,0,0.10);
+}
+
+
+.plan-check {
+
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ff9900;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    opacity: 0;
+
+    transform: scale(0.7);
+
+    transition: 0.2s ease;
+}
+
+
+.plan-card.selected .plan-check {
+
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+
+.plan-data {
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: #222;
+}
+
+
+.plan-duration {
+
+    margin-top: 5px;
+
+    font-size: 12px;
+
+    color: #888;
+}
+
+
+.plan-price {
+
+    margin-top: 12px;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color: #ff9900;
+}
+
+
+.empty-plans {
+
+    grid-column: 1 / -1;
+
+    min-height: 160px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: #999;
+}
+
+
+.empty-plans i {
+
+    margin-bottom: 12px;
+
+    font-size: 30px;
+
+    color: #ddd;
+}
+
+
+.empty-plans p {
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.summary-card {
+
+    display: none;
+}
+
+
+.summary-card.show {
+
+    display: block;
+
+    animation: fadeUp 0.3s ease;
+}
+
+
+.summary-list {
+
+    margin-bottom: 20px;
+}
+
+
+.summary-row {
+
+    min-height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    border-bottom: 1px solid #eeeeee;
+
+    font-size: 13px;
+}
+
+
+.summary-row:last-child {
+
+    border-bottom: none;
+}
+
+
+.summary-row span {
+
+    color: #888;
+}
+
+
+.summary-row strong {
+
+    color: #333;
+
+    text-align: right;
+}
+
+
+.summary-row .amount {
+
+    color: #ff9900;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   PURCHASE BUTTON
+========================================================= */
+
+.purchase-btn {
+
+    width: 100%;
+
+    height: 53px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border-radius: 10px;
+
+    background: #ff9900;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+
+.purchase-btn:hover:not(:disabled) {
+
+    background: #e98700;
+
+    transform: translateY(-1px);
+}
+
+
+.purchase-btn:disabled {
+
+    background: #ddd;
+
+    color: #999;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0,0,0,0.55);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition: 0.25s ease;
+
+    z-index: 5000;
+}
+
+
+.modal-overlay.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   PIN MODAL
+========================================================= */
+
+.pin-modal,
+.success-modal {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 420px;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.20);
+
+    animation: modalIn 0.3s ease;
+}
+
+
+.close-modal {
+
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f5f5f5;
+
+    color: #666;
+
+    font-size: 16px;
+}
+
+
+.close-modal:hover {
+
+    background: #fff0e0;
+
+    color: #ff9900;
+}
+
+
+.pin-icon {
+
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff4e5;
+
+    color: #ff9900;
+
+    font-size: 25px;
+}
+
+
+.pin-modal h2,
+.success-modal h2 {
+
+    margin-bottom: 8px;
+
+    font-size: 21px;
+}
+
+
+.pin-modal > p {
+
+    color: #888;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   PIN INPUT
+========================================================= */
+
+.pin-input-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+    margin-bottom: 8px;
+}
+
+
+.pin-input-wrapper input {
+
+    width: 100%;
+
+    height: 55px;
+
+    padding:
+        0 50px
+        0 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    text-align: center;
+
+    letter-spacing: 7px;
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+
+.pin-input-wrapper input:focus {
+
+    border-color: #ff9900;
+
+    box-shadow:
+        0 0 0 3px rgba(255,153,0,0.10);
+}
+
+
+.pin-input-wrapper button {
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 50px;
+    height: 55px;
+
+    background: transparent;
+
+    color: #777;
+
+    font-size: 16px;
+}
+
+
+.pin-error {
+
+    min-height: 20px;
+
+    margin-bottom: 8px;
+
+    font-size: 12px;
+
+    color: #e53935;
+}
+
+
+/* =========================================================
+   CONFIRM BUTTON
+========================================================= */
+
+.confirm-purchase-btn {
+
+    width: 100%;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border-radius: 10px;
+
+    background: #ff9900;
+
+    color: #ffffff;
+
+    font-weight: 700;
+
+    font-size: 14px;
+
+    transition: 0.25s ease;
+}
+
+
+.confirm-purchase-btn:hover {
+
+    background: #e98700;
+}
+
+
+.secure-text {
+
+    margin-top: 15px !important;
+
+    margin-bottom: 0 !important;
+
+    color: #888 !important;
+
+    font-size: 11px !important;
+}
+
+
+.secure-text i {
+
+    color: #18a558;
+}
+
+
+/* =========================================================
+   SUCCESS
+========================================================= */
+
+.success-icon {
+
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e9f9ef;
+
+    color: #18a558;
+
+    font-size: 32px;
+
+    animation: successPop 0.4s ease;
+}
+
+
+.success-modal > p {
+
+    color: #888;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-bottom: 20px;
+}
+
+
+.success-details {
+
+    background: #f8f8f8;
+
+    border-radius: 10px;
+
+    padding: 12px 15px;
+
+    margin-bottom: 20px;
+}
+
+
+.success-details div {
+
+    min-height: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    border-bottom: 1px solid #e8e8e8;
+
+    font-size: 12px;
+}
+
+
+.success-details div:last-child {
+
+    border-bottom: none;
+}
+
+
+.success-details span {
+
+    color: #888;
+}
+
+
+.success-details strong {
+
+    color: #333;
+}
+
+
+.done-btn {
+
+    width: 100%;
+
+    height: 50px;
+
+    border-radius: 10px;
+
+    background: #ff9900;
+
+    color: #ffffff;
+
+    font-weight: 700;
+
+    font-size: 14px;
+}
+
+
+.done-btn:hover {
+
+    background: #e98700;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(10px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes modalIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px) scale(0.96);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+@keyframes successPop {
+
+    from {
+
+        transform: scale(0.5);
+
+        opacity: 0;
+    }
+
+    to {
+
+        transform: scale(1);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .buy-header {
+
+        padding: 0 15px;
+
+        height: 65px;
+    }
+
+
+    .header-title h1 {
+
+        font-size: 18px;
+    }
+
+
+    .buy-container {
+
+        padding:
+            85px
+            15px
+            35px;
+    }
+
+
+    .network-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .plans-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   PHONE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .header-wallet {
+
+        padding: 8px 10px;
+
+        font-size: 12px;
+    }
+
+
+    .header-title p {
+
+        display: none;
+    }
+
+
+    .buy-container {
+
+        padding:
+            82px
+            10px
+            30px;
+    }
+
+
+    .buy-card {
+
+        padding: 18px;
+
+        border-radius: 14px;
+    }
+
+
+    .card-heading {
+
+        margin-bottom: 20px;
+    }
+
+
+    .card-heading h2 {
+
+        font-size: 16px;
+    }
+
+
+    .card-heading p {
+
+        font-size: 11px;
+    }
+
+
+    .plans-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+
+    .plan-card {
+
+        min-height: 120px;
+
+        padding: 14px;
+    }
+
+
+    .plan-data {
+
+        font-size: 17px;
+    }
+
+
+    .plan-price {
+
+        font-size: 14px;
+    }
+
+
+    .pin-modal,
+    .success-modal {
+
+        padding: 25px 18px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .back-btn {
+
+        width: 38px;
+
+        height: 38px;
+    }
+
+
+    .header-wallet {
+
+        display: none;
+    }
+
+
+    .buy-card {
+
+        padding: 15px;
+    }
+
+
+    .network-btn {
+
+        min-height: 72px;
+    }
+
+
+    .network-btn img {
+
+        width: 28px;
+
+        height: 28px;
+    }
+
+
+    .plan-card {
+
+        padding: 12px;
+    }
+
+
+    .plan-data {
+
+        font-size: 15px;
+    }
+
+}

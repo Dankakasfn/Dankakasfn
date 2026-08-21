@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Buy Data - DankakaData</title>
+
+
+    <!-- FONT AWESOME -->
+
+
+    
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+
+
+    <!-- BUY DATA CSS -->
+
+    <link
+        rel="stylesheet"
+        href="buy-data.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="buy-header">
+
+
+    <div class="header-left">
+
+
+        <a
+            href="dashboard.html"
+            class="back-btn"
+        >
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+        </a>
+
+
+        <div class="header-title">
+
+            <h1>Buy Data</h1>
+
+            <p>Purchase internet data instantly</p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="header-wallet">
+
+        <i class="fa-solid fa-wallet"></i>
+
+        <span id="headerBalance">
+            ₦0.00
+        </span>
+
+    </div>
+
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="buy-container">
+
+
+    <!-- =================================================
+         PHONE NUMBER SECTION
+    ================================================== -->
+
+    <section class="buy-card">
+
+
+        <div class="card-heading">
+
+            <div class="heading-icon">
+
+                <i class="fa-solid fa-mobile-screen-button"></i>
+
+            </div>
+
+
+            <div>
+
+                <h2>Recipient</h2>
+
+                <p>Enter the phone number you want to recharge</p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NETWORK -->
+
+        <div class="network-section">
+
+
+            <label>
+                Select Network
+            </label>
+
+
+            <div
+                class="network-grid"
+                id="networkGrid"
+            >
+
+
+                <!-- MTN -->
+
+                <button
+                    type="button"
+                    class="network-btn"
+                    data-network="MTN"
+                >
+
+                    <img
+                        src="images/mtn.png"
+                        alt="MTN"
+                    >
+
+                    <span>MTN</span>
+
+                </button>
+
+
+
+                <!-- GLO -->
+
+                <button
+                    type="button"
+                    class="network-btn"
+                    data-network="GLO"
+                >
+
+                    <img
+                        src="images/glo.png"
+                        alt="GLO"
+                    >
+
+                    <span>GLO</span>
+
+                </button>
+
+
+
+                <!-- AIRTEL -->
+
+                <button
+                    type="button"
+                    class="network-btn"
+                    data-network="AIRTEL"
+                >
+
+                    <img
+                        src="images/airtel.png"
+                        alt="Airtel"
+                    >
+
+                    <span>Airtel</span>
+
+                </button>
+
+
+
+                <!-- 9MOBILE -->
+
+                <button
+                    type="button"
+                    class="network-btn"
+                    data-network="9MOBILE"
+                >
+
+                    <img
+                        src="images/9mobile.png"
+                        alt="9mobile"
+                    >
+
+                    <span>9mobile</span>
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- PHONE INPUT -->
+
+        <div class="input-group">
+
+
+            <label for="phoneNumber">
+                Phone Number
+            </label>
+
+
+            <div class="phone-input">
+
+
+                <span class="country-code">
+                    +234
+                </span>
+
+
+                <input
+                    type="tel"
+                    id="phoneNumber"
+                    placeholder="8012345678"
+                    maxlength="10"
+                    autocomplete="off"
+                >
+
+
+                <div
+                    class="validator-logo"
+                    id="validatorLogo"
+                >
+
+                    <i class="fa-solid fa-mobile-screen"></i>
+
+                </div>
+
+
+            </div>
+
+
+            <div
+                class="input-message"
+                id="phoneMessage"
+            ></div>
+
+
+            <!-- DETECTED NETWORK -->
+
+            <div
+                class="detected-network"
+                id="detectedNetwork"
+            >
+
+                <span>
+                    Network detected:
+                </span>
+
+                <strong id="detectedNetworkName">
+                    -
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         DATA PLANS
+    ================================================== -->
+
+    <section class="buy-card">
+
+
+        <div class="card-heading">
+
+            <div class="heading-icon">
+
+                <i class="fa-solid fa-wifi"></i>
+
+            </div>
+
+
+            <div>
+
+                <h2>Choose Data Plan</h2>
+
+                <p>Select the data bundle you want to purchase</p>
+
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="plans-grid"
+            id="plansGrid"
+        >
+
+
+            <div class="empty-plans">
+
+                <i class="fa-solid fa-sim-card"></i>
+
+                <p>
+                    Enter a valid phone number
+                    to see available plans.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         PURCHASE SUMMARY
+    ================================================== -->
+
+    <section
+        class="buy-card summary-card"
+        id="summaryCard"
+    >
+
+
+        <div class="card-heading">
+
+            <div class="heading-icon">
+
+                <i class="fa-solid fa-receipt"></i>
+
+            </div>
+
+
+            <div>
+
+                <h2>Purchase Summary</h2>
+
+                <p>Review your order before purchase</p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="summary-list">
+
+
+            <div class="summary-row">
+
+                <span>Network</span>
+
+                <strong id="summaryNetwork">
+                    -
+                </strong>
+
+            </div>
+
+
+
+            <div class="summary-row">
+
+                <span>Phone Number</span>
+
+                <strong id="summaryPhone">
+                    -
+                </strong>
+
+            </div>
+
+
+
+            <div class="summary-row">
+
+                <span>Data Plan</span>
+
+                <strong id="summaryPlan">
+                    -
+                </strong>
+
+            </div>
+
+
+
+            <div class="summary-row">
+
+                <span>Amount</span>
+
+                <strong
+                    id="summaryAmount"
+                    class="amount"
+                >
+                    ₦0.00
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <button
+            type="button"
+            id="purchaseBtn"
+            class="purchase-btn"
+            disabled
+        >
+
+            <span id="purchaseText">
+                Continue to Purchase
+            </span>
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </button>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     PIN MODAL
+===================================================== -->
+
+<div
+    class="modal-overlay"
+    id="pinModal"
+>
+
+
+    <div class="pin-modal">
+
+
+        <button
+            type="button"
+            class="close-modal"
+            id="closePinModal"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+
+        <div class="pin-icon">
+
+            <i class="fa-solid fa-lock"></i>
+
+        </div>
+
+
+        <h2>
+            Enter Transaction PIN
+        </h2>
+
+
+        <p>
+            Enter the Transaction PIN you created
+            during registration to complete this purchase.
+        </p>
+
+
+
+        <div class="pin-input-wrapper">
+
+
+            <input
+                type="password"
+                id="transactionPin"
+                inputmode="numeric"
+                maxlength="6"
+                placeholder="Enter PIN"
+                autocomplete="off"
+            >
+
+
+            <button
+                type="button"
+                id="togglePin"
+            >
+
+                <i class="fa-solid fa-eye"></i>
+
+            </button>
+
+
+        </div>
+
+
+
+        <div
+            class="pin-error"
+            id="pinError"
+        ></div>
+
+
+
+        <button
+            type="button"
+            class="confirm-purchase-btn"
+            id="confirmPurchaseBtn"
+        >
+
+            <span>
+                Confirm Purchase
+            </span>
+
+            <i class="fa-solid fa-check"></i>
+
+        </button>
+
+
+        <p class="secure-text">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            Your transaction is protected
+
+        </p>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     SUCCESS MODAL
+===================================================== -->
+
+<div
+    class="modal-overlay"
+    id="successModal"
+>
+
+
+    <div class="success-modal">
+
+
+        <div class="success-icon">
+
+            <i class="fa-solid fa-check"></i>
+
+        </div>
+
+
+        <h2>
+            Purchase Successful!
+        </h2>
+
+
+        <p id="successMessage">
+            Your data purchase was successful.
+        </p>
+
+
+
+        <div class="success-details">
+
+            <div>
+
+                <span>Network</span>
+
+                <strong id="successNetwork">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>Phone</span>
+
+                <strong id="successPhone">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>Data</span>
+
+                <strong id="successPlan">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>Amount</span>
+
+                <strong id="successAmount">
+                    -
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <button
+            type="button"
+            class="done-btn"
+            id="doneBtn"
+        >
+
+            Done
+
+        </button>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="buy-data.js"></script>
+
+
+</body>
+
+</html>

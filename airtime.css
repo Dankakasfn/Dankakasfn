@@ -1,0 +1,964 @@
+/* =========================================================
+   DANKAKADATA AIRTIME CSS
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.airtime-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 0 25px;
+
+    background: #fff;
+    border-bottom: 1px solid #eee;
+
+    z-index: 1000;
+}
+
+
+.back-btn {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    color: #333;
+    background: #f5f5f5;
+
+    transition: .25s;
+}
+
+
+.back-btn:hover {
+    background: #fff1df;
+    color: #ff9900;
+}
+
+
+.header-title {
+    flex: 1;
+}
+
+
+.header-title h2 {
+    font-size: 19px;
+}
+
+
+.header-title p {
+    margin-top: 3px;
+    color: #999;
+    font-size: 12px;
+}
+
+
+.header-balance {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    background: #fff4e5;
+    color: #ff9900;
+
+    font-weight: 700;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.airtime-main {
+    width: 100%;
+    max-width: 750px;
+
+    margin: auto;
+
+    padding:
+        100px
+        20px
+        40px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.airtime-card {
+    background: #fff;
+
+    border: 1px solid #eee;
+
+    border-radius: 16px;
+
+    padding: 22px;
+
+    margin-bottom: 18px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.04);
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+
+.title-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff4e5;
+    color: #ff9900;
+
+    border-radius: 11px;
+}
+
+
+.section-title h3 {
+    font-size: 16px;
+}
+
+
+.section-title p {
+    margin-top: 4px;
+    color: #999;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   NETWORK
+========================================================= */
+
+.network-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+
+.network-btn {
+    min-height: 82px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    background: #fafafa;
+
+    border: 1px solid #eee;
+
+    border-radius: 12px;
+
+    color: #333;
+
+    transition: .25s;
+}
+
+
+.network-btn img {
+    width: 32px;
+    height: 32px;
+
+    object-fit: contain;
+}
+
+
+.network-btn span {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.network-btn:hover {
+    border-color: #ff9900;
+    background: #fff9f1;
+}
+
+
+.network-btn.active {
+    border-color: #ff9900;
+
+    background: #fff4e5;
+
+    color: #ff9900;
+
+    box-shadow:
+        0 4px 12px rgba(255,153,0,.15);
+}
+
+
+/* =========================================================
+   PHONE
+========================================================= */
+
+.phone-wrapper {
+    width: 100%;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #ddd;
+
+    border-radius: 11px;
+
+    overflow: hidden;
+
+    background: #fff;
+
+    transition: .25s;
+}
+
+
+.phone-wrapper:focus-within {
+    border-color: #ff9900;
+
+    box-shadow:
+        0 0 0 3px rgba(255,153,0,.08);
+}
+
+
+.country-code {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 13px;
+
+    background: #f7f7f7;
+
+    border-right: 1px solid #eee;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.phone-wrapper input {
+    flex: 1;
+
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    padding: 0 13px;
+
+    font-size: 15px;
+}
+
+
+.validator-logo {
+    width: 52px;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #aaa;
+}
+
+
+.validator-logo img {
+    width: 32px;
+    height: 32px;
+
+    object-fit: contain;
+}
+
+
+.detected-network {
+    display: none;
+
+    align-items: center;
+    gap: 6px;
+
+    margin-top: 10px;
+
+    color: #18864b;
+
+    font-size: 12px;
+}
+
+
+.detected-network.show {
+    display: flex;
+}
+
+
+.error-message {
+    min-height: 18px;
+
+    margin-top: 7px;
+
+    font-size: 12px;
+}
+
+
+.error-message.error {
+    color: #d93025;
+}
+
+
+.error-message.success {
+    color: #18864b;
+}
+
+
+/* =========================================================
+   AMOUNT
+========================================================= */
+
+.amount-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+
+.amount-btn {
+    min-height: 50px;
+
+    border: 1px solid #eee;
+
+    background: #fafafa;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    color: #444;
+
+    transition: .25s;
+}
+
+
+.amount-btn:hover {
+    border-color: #ff9900;
+    color: #ff9900;
+}
+
+
+.amount-btn.active {
+    background: #ff9900;
+    border-color: #ff9900;
+    color: #fff;
+}
+
+
+/* =========================================================
+   CUSTOM AMOUNT
+========================================================= */
+
+.custom-amount-box {
+    display: none;
+
+    margin-top: 15px;
+}
+
+
+.custom-amount-box.show {
+    display: block;
+}
+
+
+.custom-amount-box label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.amount-input {
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+.amount-input span {
+    padding-left: 14px;
+
+    font-weight: 700;
+
+    color: #ff9900;
+}
+
+
+.amount-input input {
+    flex: 1;
+
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    padding: 0 10px;
+
+    font-size: 15px;
+}
+
+
+.custom-amount-box small {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #999;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.summary-card {
+    display: none;
+
+    background: #fff;
+
+    border: 1px solid #eee;
+
+    border-radius: 16px;
+
+    padding: 22px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.05);
+}
+
+
+.summary-card.show {
+    display: block;
+
+    animation:
+        summaryIn .3s ease;
+}
+
+
+@keyframes summaryIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+.summary-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+    color: #222;
+}
+
+
+.summary-title i {
+    color: #ff9900;
+}
+
+
+.summary-title h3 {
+    font-size: 17px;
+}
+
+
+.summary-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 10px 0;
+
+    font-size: 13px;
+}
+
+
+.summary-row span {
+    color: #888;
+}
+
+
+.summary-row strong {
+    color: #333;
+}
+
+
+.balance-row strong {
+    color: #18864b;
+}
+
+
+.summary-divider {
+    height: 1px;
+
+    background: #eee;
+
+    margin: 5px 0 12px;
+}
+
+
+.summary-total {
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+
+.summary-total strong {
+    color: #ff9900;
+}
+
+
+/* =========================================================
+   PURCHASE BUTTON
+========================================================= */
+
+.purchase-btn,
+.confirm-btn {
+    width: 100%;
+    min-height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border-radius: 10px;
+
+    background: #ff9900;
+
+    color: #fff;
+
+    font-weight: 700;
+
+    transition: .25s;
+}
+
+
+.purchase-btn:hover,
+.confirm-btn:hover {
+    background: #e88a00;
+}
+
+
+.purchase-btn:disabled {
+    background: #ddd;
+
+    color: #999;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0,0,0,.5);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: .25s;
+
+    z-index: 5000;
+}
+
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.modal-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 420px;
+
+    padding: 28px;
+
+    background: #fff;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    transform: scale(.95);
+
+    transition: .25s;
+}
+
+
+.modal.show .modal-box {
+    transform: scale(1);
+}
+
+
+.modal-close {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    background: #f5f5f5;
+
+    color: #777;
+}
+
+
+.modal-icon,
+.success-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: #fff4e5;
+
+    color: #ff9900;
+
+    font-size: 25px;
+}
+
+
+.modal-box h2 {
+    margin-bottom: 8px;
+
+    font-size: 21px;
+}
+
+
+.modal-box > p {
+    margin-bottom: 20px;
+
+    color: #888;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   PIN
+========================================================= */
+
+.pin-wrapper {
+    position: relative;
+
+    margin-bottom: 8px;
+}
+
+
+.pin-wrapper input {
+    width: 100%;
+    height: 52px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    padding: 0 48px 0 14px;
+
+    font-size: 16px;
+
+    letter-spacing: 3px;
+}
+
+
+.pin-wrapper input:focus {
+    border-color: #ff9900;
+}
+
+
+#togglePin {
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    width: 48px;
+    height: 52px;
+
+    background: transparent;
+
+    color: #777;
+}
+
+
+.pin-error {
+    min-height: 22px;
+
+    margin-bottom: 10px;
+
+    color: #d93025;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   SUCCESS
+========================================================= */
+
+.success-icon {
+    background: #eaf8f0;
+
+    color: #18864b;
+}
+
+
+.success-details {
+    margin: 20px 0;
+
+    background: #f8f8f8;
+
+    border-radius: 12px;
+
+    padding: 12px;
+}
+
+
+.success-details div {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 8px 0;
+
+    font-size: 12px;
+}
+
+
+.success-details span {
+    color: #888;
+}
+
+
+.success-details strong {
+    color: #333;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .airtime-header {
+        height: 64px;
+        padding: 0 12px;
+    }
+
+
+    .header-title h2 {
+        font-size: 16px;
+    }
+
+
+    .header-title p {
+        display: none;
+    }
+
+
+    .header-balance {
+        padding: 8px 9px;
+        font-size: 12px;
+    }
+
+
+    .airtime-main {
+        padding:
+            84px
+            12px
+            30px;
+    }
+
+
+    .airtime-card,
+    .summary-card {
+        padding: 17px;
+    }
+
+
+    .network-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .amount-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .modal-box {
+        padding: 23px 18px;
+    }
+
+}
+
+
+@media (max-width: 360px) {
+
+    .header-balance i {
+        display: none;
+    }
+
+
+    .header-balance {
+        font-size: 11px;
+    }
+
+
+    .airtime-main {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+
+    .airtime-card,
+    .summary-card {
+        padding: 14px;
+    }
+
+}

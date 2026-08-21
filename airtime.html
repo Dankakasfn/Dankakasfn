@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Buy Airtime - DankakaData</title>
+
+    <link
+        rel="stylesheet"
+        href="airtime.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="airtime-header">
+
+    <a
+        href="dashboard.html"
+        class="back-btn"
+    >
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+
+    <div class="header-title">
+
+        <h2>Buy Airtime</h2>
+
+        <p>Recharge any Nigerian network</p>
+
+    </div>
+
+
+    <div class="header-balance">
+
+        <i class="fa-solid fa-wallet"></i>
+
+        <span id="headerBalance">
+            ₦0.00
+        </span>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="airtime-main">
+
+
+    <!-- =================================================
+         NETWORK
+    ================================================== -->
+
+    <section class="airtime-card">
+
+        <div class="section-title">
+
+            <div class="title-icon">
+
+                <i class="fa-solid fa-signal"></i>
+
+            </div>
+
+            <div>
+
+                <h3>Select Network</h3>
+
+                <p>
+                    Choose your mobile network
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="network-grid">
+
+
+            <!-- MTN -->
+
+            <button
+                class="network-btn"
+                data-network="MTN"
+            >
+
+                <img
+                    src="images/mtn.png"
+                    alt="MTN"
+                >
+
+                <span>MTN</span>
+
+            </button>
+
+
+            <!-- GLO -->
+
+            <button
+                class="network-btn"
+                data-network="GLO"
+            >
+
+                <img
+                    src="images/glo.png"
+                    alt="Glo"
+                >
+
+                <span>Glo</span>
+
+            </button>
+
+
+            <!-- AIRTEL -->
+
+            <button
+                class="network-btn"
+                data-network="AIRTEL"
+            >
+
+                <img
+                    src="images/airtel.png"
+                    alt="Airtel"
+                >
+
+                <span>Airtel</span>
+
+            </button>
+
+
+            <!-- 9MOBILE -->
+
+            <button
+                class="network-btn"
+                data-network="9MOBILE"
+            >
+
+                <img
+                    src="images/9mobile.png"
+                    alt="9mobile"
+                >
+
+                <span>9mobile</span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PHONE NUMBER
+    ================================================== -->
+
+    <section class="airtime-card">
+
+        <div class="section-title">
+
+            <div class="title-icon">
+
+                <i class="fa-solid fa-mobile-screen"></i>
+
+            </div>
+
+            <div>
+
+                <h3>Phone Number</h3>
+
+                <p>
+                    Enter the number to recharge
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="phone-wrapper">
+
+            <div class="country-code">
+                +234
+            </div>
+
+
+            <input
+                type="tel"
+                id="phoneNumber"
+                placeholder="8012345678"
+                maxlength="10"
+                inputmode="numeric"
+                autocomplete="tel"
+            >
+
+
+            <div
+                id="validatorLogo"
+                class="validator-logo"
+            >
+
+                <i class="fa-solid fa-mobile-screen"></i>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="detectedNetwork"
+            class="detected-network"
+        >
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <span>
+                Network:
+            </span>
+
+            <strong id="detectedNetworkName">
+                -
+            </strong>
+
+        </div>
+
+
+        <div
+            id="phoneError"
+            class="error-message"
+        ></div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         AMOUNT
+    ================================================== -->
+
+    <section class="airtime-card">
+
+        <div class="section-title">
+
+            <div class="title-icon">
+
+                <i class="fa-solid fa-naira-sign"></i>
+
+            </div>
+
+            <div>
+
+                <h3>Select Amount</h3>
+
+                <p>
+                    Choose airtime amount
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="amount-grid">
+
+
+            <button
+                class="amount-btn"
+                data-amount="100"
+            >
+                ₦100
+            </button>
+
+
+            <button
+                class="amount-btn"
+                data-amount="200"
+            >
+                ₦200
+            </button>
+
+
+            <button
+                class="amount-btn"
+                data-amount="500"
+            >
+                ₦500
+            </button>
+
+
+            <button
+                class="amount-btn"
+                data-amount="1000"
+            >
+                ₦1,000
+            </button>
+
+
+            <button
+                class="amount-btn"
+                data-amount="2000"
+            >
+                ₦2,000
+            </button>
+
+
+            <button
+                class="amount-btn"
+                data-amount="5000"
+            >
+                ₦5,000
+            </button>
+
+
+            <button
+                class="amount-btn"
+                data-amount="10000"
+            >
+                ₦10,000
+            </button>
+
+
+            <button
+                class="amount-btn"
+                data-amount="custom"
+            >
+                Custom
+            </button>
+
+        </div>
+
+
+        <div
+            id="customAmountBox"
+            class="custom-amount-box"
+        >
+
+            <label>
+                Enter Amount
+            </label>
+
+
+            <div class="amount-input">
+
+                <span>₦</span>
+
+                <input
+                    type="number"
+                    id="customAmount"
+                    placeholder="Enter amount"
+                    min="50"
+                    max="50000"
+                    inputmode="decimal"
+                >
+
+            </div>
+
+
+            <small>
+                Minimum ₦50 — Maximum ₦50,000
+            </small>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SUMMARY
+    ================================================== -->
+
+    <section
+        id="summaryCard"
+        class="summary-card"
+    >
+
+        <div class="summary-title">
+
+            <i class="fa-solid fa-receipt"></i>
+
+            <h3>Purchase Summary</h3>
+
+        </div>
+
+
+        <div class="summary-row">
+
+            <span>Network</span>
+
+            <strong id="summaryNetwork">
+                -
+            </strong>
+
+        </div>
+
+
+        <div class="summary-row">
+
+            <span>Phone Number</span>
+
+            <strong id="summaryPhone">
+                -
+            </strong>
+
+        </div>
+
+
+        <div class="summary-row">
+
+            <span>Airtime</span>
+
+            <strong id="summaryAmount">
+                ₦0.00
+            </strong>
+
+        </div>
+
+
+        <div class="summary-row balance-row">
+
+            <span>Wallet Balance</span>
+
+            <strong id="summaryBalance">
+                ₦0.00
+            </strong>
+
+        </div>
+
+
+        <div class="summary-divider"></div>
+
+
+        <div class="summary-total">
+
+            <span>Total</span>
+
+            <strong id="summaryTotal">
+                ₦0.00
+            </strong>
+
+        </div>
+
+
+        <button
+            id="purchaseBtn"
+            class="purchase-btn"
+            disabled
+        >
+
+            <span>
+                Continue Purchase
+            </span>
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </button>
+
+    </section>
+
+</main>
+
+
+
+<!-- =====================================================
+     PIN MODAL
+===================================================== -->
+
+<div
+    id="pinModal"
+    class="modal"
+>
+
+    <div class="modal-box">
+
+
+        <button
+            id="closePinModal"
+            class="modal-close"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="modal-icon">
+
+            <i class="fa-solid fa-lock"></i>
+
+        </div>
+
+
+        <h2>
+            Confirm Purchase
+        </h2>
+
+
+        <p>
+            Enter your transaction PIN to
+            authorize this airtime purchase.
+        </p>
+
+
+        <div class="pin-wrapper">
+
+            <input
+                type="password"
+                id="transactionPin"
+                placeholder="Enter transaction PIN"
+                maxlength="6"
+                inputmode="numeric"
+                autocomplete="off"
+            >
+
+
+            <button
+                type="button"
+                id="togglePin"
+            >
+
+                <i class="fa-solid fa-eye"></i>
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="pinError"
+            class="pin-error"
+        ></div>
+
+
+        <button
+            id="confirmPurchaseBtn"
+            class="confirm-btn"
+        >
+
+            <span>
+                Confirm Purchase
+            </span>
+
+            <i class="fa-solid fa-check"></i>
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     SUCCESS MODAL
+===================================================== -->
+
+<div
+    id="successModal"
+    class="modal"
+>
+
+    <div class="modal-box success-box">
+
+
+        <div class="success-icon">
+
+            <i class="fa-solid fa-check"></i>
+
+        </div>
+
+
+        <h2>
+            Airtime Successful
+        </h2>
+
+
+        <p id="successMessage">
+            Your airtime purchase was successful.
+        </p>
+
+
+        <div class="success-details">
+
+            <div>
+
+                <span>Network</span>
+
+                <strong id="successNetwork">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>Phone</span>
+
+                <strong id="successPhone">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>Amount</span>
+
+                <strong id="successAmount">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>Reference</span>
+
+                <strong id="successReference">
+                    -
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="doneBtn"
+            class="confirm-btn"
+        >
+
+            Done
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<script src="airtime.js"></script>
+
+</body>
+
+</html>
