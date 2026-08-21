@@ -1,0 +1,1764 @@
+/* =========================================================
+   DANKAKADATA DASHBOARD CSS
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f5f7fa;
+
+    color: #222;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+
+button {
+    border: none;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.dashboard-header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 25px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e8e8e8;
+
+    z-index: 1000;
+}
+
+
+/* Header left */
+
+.header-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+/* Menu button */
+
+.menu-btn {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+
+    color: #222;
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+
+.menu-btn:hover {
+
+    background: #f2f2f2;
+
+    color: #ff9900;
+}
+
+/* ========================================
+   WHATSAPP HEADER BUTTON
+======================================== */
+
+.whatsapp-header {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #25D366;
+
+    color: #ffffff;
+
+    border-radius: 50%;
+
+    font-size: 21px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Hover */
+
+.whatsapp-header:hover {
+    background: #20b957;
+
+    color: #ffffff;
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 5px 15px rgba(37, 211, 102, 0.30);
+}
+
+
+/* Click */
+
+.whatsapp-header:active {
+    transform: scale(0.95);
+}
+/* =========================================================
+   DASHBOARD LOGO
+========================================================= */
+
+.dashboard-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+    
+
+}
+
+
+.dashboard-logo img {
+
+    width: 42px;
+    height: 42px;
+
+    object-fit: contain;
+
+    display: block;
+border-radius: 50%;
+}
+
+
+.dashboard-logo span {
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: #222;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   HEADER RIGHT
+========================================================= */
+
+.header-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+/* Notification */
+
+.header-icon {
+
+    position: relative;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+
+    color: #555;
+
+    font-size: 20px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.header-icon:hover {
+
+    background: #f5f5f5;
+
+    color: #ff9900;
+}
+
+
+.notification-dot {
+
+    position: absolute;
+
+    top: 8px;
+    right: 8px;
+
+    width: 7px;
+    height: 7px;
+
+    background: #ff9900;
+
+    border-radius: 50%;
+}
+
+
+/* Profile */
+
+.profile-btn {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ff9900;
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.profile-btn:hover {
+
+    transform: scale(1.05);
+
+    background: #e88a00;
+}
+
+
+/* =========================================================
+   SIDEBAR OVERLAY
+========================================================= */
+
+.sidebar-overlay {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.3s;
+
+    z-index: 1100;
+}
+
+
+.sidebar-overlay.active {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+
+    position: fixed;
+
+    top: 0;
+
+    left: -300px;
+
+    width: 280px;
+
+    height: 100vh;
+
+    background: #ffffff;
+
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.12);
+
+    z-index: 1200;
+
+    display: flex;
+
+    flex-direction: column;
+
+    transition: left 0.35s ease;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+}
+
+
+.sidebar.active {
+
+    left: 0;
+}
+
+
+/* =========================================================
+   SIDEBAR HEADER
+========================================================= */
+
+.sidebar-header {
+
+    min-height: 75px;
+
+    padding: 15px 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+.sidebar-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 0;
+}
+
+
+.sidebar-brand img {
+
+    width: 42px;
+    height: 42px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+
+.sidebar-brand div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+
+.sidebar-brand strong {
+
+    font-size: 17px;
+
+    color: #222;
+
+    white-space: nowrap;
+}
+
+
+.sidebar-brand small {
+
+    margin-top: 3px;
+
+    font-size: 11px;
+
+    color: #888;
+}
+
+
+/* Close button */
+
+.close-sidebar {
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+
+    color: #666;
+
+    font-size: 20px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.close-sidebar:hover {
+
+    background: #fff1df;
+
+    color: #ff9900;
+}
+
+
+/* =========================================================
+   SIDEBAR SECTION
+========================================================= */
+
+.sidebar-section {
+
+    padding: 18px 12px 5px;
+}
+
+
+.section-title {
+
+    padding: 0 12px;
+
+    margin-bottom: 10px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    color: #999;
+}
+
+
+/* =========================================================
+   SIDEBAR ITEMS
+========================================================= */
+
+.sidebar-item {
+
+    width: 100%;
+
+    min-height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 0 15px;
+
+    margin-bottom: 4px;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: #444;
+
+    font-size: 15px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.2s ease;
+}
+
+
+.sidebar-item i:first-child {
+
+    width: 20px;
+
+    min-width: 20px;
+
+    text-align: center;
+
+    font-size: 17px;
+}
+
+
+.sidebar-item:hover {
+
+    background: #fff4e5;
+
+    color: #ff9900;
+}
+
+
+/* Active */
+
+.sidebar-item.active {
+
+    background: #ff9900;
+
+    color: #ffffff;
+
+    box-shadow: 0 5px 15px rgba(255, 153, 0, 0.22);
+}
+
+
+.sidebar-item.active:hover {
+
+    background: #ff9900;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   WALLET DROPDOWN
+========================================================= */
+
+.wallet-dropdown {
+
+    width: 100%;
+}
+
+
+/* Wallet button */
+
+.wallet-btn {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    background: transparent;
+
+    border: none;
+
+    color: #444;
+
+    cursor: pointer;
+
+    text-align: left;
+}
+
+
+.wallet-btn span {
+
+    flex: 1;
+}
+
+
+/* Wallet arrow */
+
+.wallet-arrow {
+
+    width: auto !important;
+
+    min-width: auto !important;
+
+    font-size: 12px !important;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Rotate arrow */
+
+.wallet-btn.active .wallet-arrow {
+
+    transform: rotate(180deg);
+}
+
+
+/* Wallet menu */
+
+.wallet-menu {
+
+    width: 100%;
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        max-height 0.35s ease,
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+
+/* Open Wallet */
+
+.wallet-menu.active {
+
+    max-height: 200px;
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* Wallet item */
+
+.wallet-item {
+
+    width: 100%;
+
+    min-height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 9px 10px 9px 49px;
+
+    margin: 2px 0;
+
+    color: #555 !important;
+
+    background: transparent;
+
+    text-decoration: none !important;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    line-height: 1.25;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.wallet-item i {
+
+    width: 18px;
+
+    min-width: 18px;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+.wallet-item span {
+
+    flex: 1;
+}
+
+
+/* Wallet hover */
+
+.wallet-item:hover {
+
+    color: #ff9900 !important;
+
+    background: #fff4e5;
+}
+
+
+/* =========================================================
+   TRANSACTION DROPDOWN
+========================================================= */
+
+.sidebar-dropdown {
+
+    width: 100%;
+}
+
+
+/* Transaction button */
+
+.dropdown-btn {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    background: transparent;
+
+    color: #444;
+
+    border: none;
+
+    cursor: pointer;
+
+    text-align: left;
+}
+
+
+.dropdown-btn span {
+
+    flex: 1;
+}
+
+
+/* Transaction arrow */
+
+.dropdown-arrow {
+
+    width: auto !important;
+
+    min-width: auto !important;
+
+    font-size: 12px !important;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Rotate */
+
+.dropdown-btn.open .dropdown-arrow {
+
+    transform: rotate(180deg);
+}
+
+
+/* Transaction menu */
+
+.dropdown-menu {
+
+    width: 100%;
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        max-height 0.35s ease,
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+
+/* Open */
+
+.dropdown-menu.open {
+
+    max-height: 250px;
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* Transaction links */
+
+.dropdown-menu a {
+
+    display: block;
+
+    width: 100%;
+
+    min-height: 40px;
+
+    padding: 10px 10px 10px 49px;
+
+    margin: 2px 0;
+
+    border-radius: 8px;
+
+    color: #555 !important;
+
+    background: transparent;
+
+    text-decoration: none !important;
+
+    font-size: 13px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.dropdown-menu a:hover {
+
+    color: #ff9900 !important;
+
+    background: #fff4e5;
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+========================================================= */
+
+.sidebar-bottom {
+
+    margin-top: auto;
+
+    padding: 10px 12px 18px;
+
+    border-top: 1px solid #eeeeee;
+}
+
+
+/* Logout */
+
+.logout-btn {
+
+    color: #e53935;
+}
+
+
+.logout-btn:hover {
+
+    color: #e53935;
+
+    background: #fff0f0;
+}
+
+
+/* =========================================================
+   MAIN DASHBOARD
+========================================================= */
+
+.dashboard-main {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding:
+
+        100px
+
+        30px
+
+        40px;
+}
+
+
+/* =========================================================
+   WELCOME
+========================================================= */
+
+.welcome-section {
+
+    margin-bottom: 25px;
+}
+
+
+.welcome-small {
+
+    margin-bottom: 5px;
+
+    font-size: 14px;
+
+    color: #888;
+}
+
+
+.welcome-section h1 {
+
+    margin-bottom: 5px;
+
+    font-size: 28px;
+
+    color: #222;
+}
+
+
+.welcome-text {
+
+    color: #888;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   BALANCE GRID
+========================================================= */
+
+.balance-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   BALANCE CARD
+========================================================= */
+
+.balance-card {
+
+    min-height: 210px;
+
+    padding: 24px;
+
+    background: linear-gradient(135deg,#ff8c00,#ff4d00);
+
+    border-radius: 16px;
+
+    border: 1px solid linear-gradient(135deg,#ff8c00,#ff4d00);
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.05);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.balance-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    right: -40px;
+    bottom: -50px;
+
+    background: rgba(255, 153, 0, 0.08);
+
+    border-radius: 50%;
+}
+
+
+/* Card top */
+
+.card-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+
+/* Card icon */
+
+.card-icon {
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #fff4e5;
+
+    color: #ff9900;
+
+    font-size: 19px;
+}
+
+
+/* Balance toggle */
+
+.balance-toggle {
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #f5f5f5;
+
+    color: #666;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+
+.balance-toggle:hover {
+
+    background: #fff4e5;
+
+    color: #ff9900;
+}
+
+
+/* Card label */
+
+.card-label {
+
+    margin-bottom: 8px;
+
+    color: #888;
+
+    font-size: 13px;
+}
+
+
+/* Balance */
+
+.balance-card h2 {
+
+    margin-bottom: 20px;
+
+    font-size: 28px;
+
+    color: #222;
+}
+
+
+/* Card action */
+
+.card-action {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 14px;
+
+    background: #fff4e5;
+
+    color: #ff9900;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.card-action:hover {
+
+    background: #ff9900;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   DASHBOARD SECTIONS
+========================================================= */
+
+.dashboard-section {
+
+    margin-bottom: 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 16px;
+
+    padding: 24px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+
+/* Section heading */
+
+.section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 22px;
+}
+
+
+.section-heading h2 {
+
+    margin-bottom: 5px;
+
+    font-size: 20px;
+
+    color: #222;
+}
+
+
+.section-heading p {
+
+    color: #888;
+
+    font-size: 13px;
+}
+
+
+/* View all */
+
+.view-all {
+
+    color: #ff9900;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.view-all:hover {
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   QUICK SERVICES
+========================================================= */
+
+/* ========================================
+   SERVICES GRID
+======================================== */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.service-card {
+
+    min-height: 150px;
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background: #fafafa;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 12px;
+
+    color: #222;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+
+        /* align-items: center;
+text-decoration: none;
+box-sizing: border-box; */
+}
+
+
+
+@media (max-width: 768px) {
+
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .service-card {
+        min-height: 140px;
+        padding: 15px 10px;
+    }
+
+}
+
+
+.service-card:hover {
+
+    transform: translateY(-3px);
+
+    border-color: #ff9900;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+
+.service-icon {
+
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 13px;
+
+    border-radius: 11px;
+
+    background: #fff4e5;
+
+    color: #ff9900;
+
+    font-size: 18px;
+}
+
+
+.service-card h3 {
+
+    margin-bottom: 5px;
+
+    font-size: 15px;
+}
+
+
+.service-card p {
+
+    color: #888;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   RECENT TRANSACTIONS
+========================================================= */
+
+.transactions-section {
+
+    margin-bottom: 20px;
+}
+
+
+.transaction-container {
+
+    width: 100%;
+}
+
+
+/* Empty */
+
+.empty-transactions {
+
+    min-height: 180px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: #888;
+}
+
+
+.empty-icon {
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    border-radius: 50%;
+
+    background: #f5f5f5;
+
+    color: #aaa;
+
+    font-size: 23px;
+}
+
+
+.empty-transactions h3 {
+
+    margin-bottom: 6px;
+
+    color: #555;
+
+    font-size: 16px;
+}
+
+
+.empty-transactions p {
+
+    font-size: 13px;
+
+    color: #999;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.sidebar::-webkit-scrollbar {
+
+    width: 5px;
+}
+
+
+.sidebar::-webkit-scrollbar-track {
+
+    background: transparent;
+}
+
+
+.sidebar::-webkit-scrollbar-thumb {
+
+    background: #ddd;
+
+    border-radius: 10px;
+}
+
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+
+    background: #ff9900;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+
+    /* Header */
+
+    .dashboard-header {
+
+        height: 65px;
+
+        padding: 0 15px;
+    }
+
+
+    .dashboard-logo img {
+
+        width: 38px;
+        height: 38px;
+    }
+
+
+    .dashboard-logo span {
+
+        font-size: 18px;
+    }
+
+
+    .header-right {
+
+        gap: 7px;
+    }
+
+
+    .header-icon,
+    .profile-btn {
+
+        width: 38px;
+        height: 38px;
+    }
+
+
+    /* Sidebar */
+
+    .sidebar {
+
+        width: 280px;
+
+        left: -300px;
+    }
+
+
+    /* Main */
+
+    .dashboard-main {
+
+        padding:
+
+            90px
+
+            15px
+
+            30px;
+    }
+
+
+    /* Welcome */
+
+    .welcome-section h1 {
+
+        font-size: 24px;
+    }
+
+
+    /* Balance */
+
+    .balance-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+
+    .balance-card {
+
+        min-height: 190px;
+
+        padding: 20px;
+    }
+
+
+    /* Services */
+
+    .services-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+
+    .service-card {
+
+        min-height: 140px;
+
+        padding: 16px;
+    }
+
+
+    /* Dashboard sections */
+
+    .dashboard-section {
+
+        padding: 18px;
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 18px;
+    }
+
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .dashboard-logo span {
+        font-size: 17px;
+    }
+
+    .dashboard-main {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .welcome-section h1 {
+        font-size: 22px;
+    }
+
+
+    /* ========================================
+       SERVICES - 2 COLUMNS ON PHONE
+    ======================================== */
+
+    .services-grid {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+
+        width: 100%;
+    }
+
+
+    .service-card {
+        min-height: 140px;
+
+        padding: 14px 10px;
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: flex-start;
+
+        overflow: hidden;
+    }
+
+
+    .service-icon {
+        width: 38px;
+        height: 38px;
+
+        margin-bottom: 10px;
+
+        font-size: 16px;
+
+        flex-shrink: 0;
+    }
+
+
+    .service-card h3 {
+        font-size: 14px;
+
+        margin-bottom: 4px;
+
+        line-height: 1.25;
+    }
+
+
+    .service-card p {
+        font-size: 11px;
+
+        line-height: 1.35;
+    }
+
+
+    .section-heading {
+        align-items: flex-start;
+    }
+
+
+    .section-heading h2 {
+        font-size: 17px;
+    }
+
+
+    .view-all {
+        font-size: 12px;
+    }
+
+
+    .wallet-item {
+        padding-left: 45px;
+
+        font-size: 12px;
+    }
+
+
+    .dropdown-menu a {
+        padding-left: 45px;
+
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 360px) {
+
+
+    .dashboard-logo span {
+
+        display: none;
+    }
+
+
+    .dashboard-header {
+
+        padding: 0 10px;
+    }
+
+
+    .dashboard-main {
+
+        padding-left: 10px;
+
+        padding-right: 10px;
+    }
+
+
+    .balance-card {
+
+        padding: 17px;
+    }
+
+
+    .dashboard-section {
+
+        padding: 15px;
+    }
+
+
+    .sidebar {
+
+        width: 270px;
+    }
+
+
+}
+
+
+
+
+
